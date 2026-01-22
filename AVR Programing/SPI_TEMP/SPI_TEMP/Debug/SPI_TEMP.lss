@@ -102,7 +102,7 @@ int main(void)
   a0:	84 b1       	in	r24, 0x04	; 4
   a2:	8f 7e       	andi	r24, 0xEF	; 239
   a4:	84 b9       	out	0x04, r24	; 4
-	
+
 	SPCR |= ((1 << SPE) |( 1 << MSTR) | (1 << SPR0));
   a6:	8c b5       	in	r24, 0x2c	; 44
   a8:	81 65       	ori	r24, 0x51	; 81
@@ -111,6 +111,7 @@ int main(void)
   ac:	8c b5       	in	r24, 0x2c	; 44
   ae:	81 7f       	andi	r24, 0xF1	; 241
   b0:	8c bd       	out	0x2c, r24	; 44
+
 	while (1)
 	{
 		PORTB&=~(1<<PB2); //Selecting slave
@@ -126,7 +127,7 @@ int main(void)
   c0:	fd cf       	rjmp	.-6      	; 0xbc <main+0x26>
 		(void)SPDR; // reading SPDR(for dummy garbage value)
   c2:	8e b5       	in	r24, 0x2e	; 46
-		
+
 		SPDR=0X00;    // Sending dummy to read the data from BMP280
   c4:	1e bc       	out	0x2e, r1	; 46
 		while (!(SPSR & (1<<SPIF)));//waiting until flag is set.
@@ -135,14 +136,15 @@ int main(void)
   ca:	fd cf       	rjmp	.-6      	; 0xc6 <main+0x30>
 		chip_id = SPDR;   // reading chip ID
   cc:	8e b5       	in	r24, 0x2e	; 46
-		
+
 		PORTB|=(1<<PB2); // De selecting slave
   ce:	85 b1       	in	r24, 0x05	; 5
   d0:	84 60       	ori	r24, 0x04	; 4
   d2:	85 b9       	out	0x05, r24	; 5
-		
+
+
 		//Enabling measurement by writing 0x27 to 0xF4 register of bmp280
-		
+
 		PORTB&=~(1<<PB2); //Selecting slave
   d4:	85 b1       	in	r24, 0x05	; 5
   d6:	8b 7f       	andi	r24, 0xFB	; 251
@@ -156,7 +158,7 @@ int main(void)
   e2:	fd cf       	rjmp	.-6      	; 0xde <main+0x48>
 		(void)SPDR; // reading SPDR(for dummy garbage value)
   e4:	8e b5       	in	r24, 0x2e	; 46
-		
+
 		SPDR=0X27;    // writing to F4 the data from BMP280
   e6:	87 e2       	ldi	r24, 0x27	; 39
   e8:	8e bd       	out	0x2e, r24	; 46
@@ -170,9 +172,9 @@ int main(void)
   f2:	85 b1       	in	r24, 0x05	; 5
   f4:	84 60       	ori	r24, 0x04	; 4
   f6:	85 b9       	out	0x05, r24	; 5
-		
+
 		// Reading Data from 0xFA
-		
+
 		PORTB&=~(1<<PB2); //Selecting slave
   f8:	85 b1       	in	r24, 0x05	; 5
   fa:	8b 7f       	andi	r24, 0xFB	; 251
@@ -186,7 +188,7 @@ int main(void)
  106:	fd cf       	rjmp	.-6      	; 0x102 <main+0x6c>
 		(void)SPDR; // reading SPDR(for dummy garbage value)
  108:	8e b5       	in	r24, 0x2e	; 46
-		
+
 		SPDR=0X00;    // Sending dummy to read the data from BMP280
  10a:	1e bc       	out	0x2e, r1	; 46
 		while (!(SPSR & (1<<SPIF)));//waiting until flag is set.
@@ -195,8 +197,9 @@ int main(void)
  110:	fd cf       	rjmp	.-6      	; 0x10c <main+0x76>
 		msb = SPDR;   // reading chip ID
  112:	4e b5       	in	r20, 0x2e	; 46
-		
+
 		//Reading Data from 0XFB
+
 		SPDR=0X00;    // Sending dummy to read the data from BMP280
  114:	1e bc       	out	0x2e, r1	; 46
 		while (!(SPSR & (1<<SPIF)));//waiting until flag is set.
@@ -205,7 +208,7 @@ int main(void)
  11a:	fd cf       	rjmp	.-6      	; 0x116 <main+0x80>
 		lsb = SPDR;   // reading chip ID
  11c:	8e b5       	in	r24, 0x2e	; 46
-		
+
 		SPDR=0X00;    // Sending dummy to read the data from BMP280
  11e:	1e bc       	out	0x2e, r1	; 46
 		while (!(SPSR & (1<<SPIF)));//waiting until flag is set.
@@ -214,7 +217,7 @@ int main(void)
  124:	fd cf       	rjmp	.-6      	; 0x120 <main+0x8a>
 		xlsb = SPDR;   // reading chip ID
  126:	2e b5       	in	r18, 0x2e	; 46
-		
+
 		temp = ((uint32_t)msb << 12) | ((uint32_t)lsb << 4) | ((uint32_t)xlsb >> 4);
  128:	50 e0       	ldi	r21, 0x00	; 0
  12a:	60 e0       	ldi	r22, 0x00	; 0
