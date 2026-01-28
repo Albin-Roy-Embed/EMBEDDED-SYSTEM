@@ -636,3 +636,4 @@
 2026-01-28 20:55:10,349 [INFO] ApiDb:452 - User favorites MCUs=[]
 2026-01-28 20:55:10,350 [INFO] ApiDb:448 - Save user favorites file C:\Users\user/.stm32cubeide/favorites.boards.txt: 0 item(s)
 2026-01-28 20:55:10,350 [INFO] ApiDb:452 - User favorites Boards=[]
+2026-01-28 21:18:12,971 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
