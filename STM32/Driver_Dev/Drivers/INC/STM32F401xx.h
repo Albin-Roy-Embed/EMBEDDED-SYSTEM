@@ -1,3 +1,5 @@
+
+
 /*
  * STM32F401xx.h
  *
@@ -7,6 +9,10 @@
 
 #ifndef INC_STM32F401XX_H_
 #define INC_STM32F401XX_H_
+#include <stdio.h>
+#include <stdint.h>
+
+
 
 #define _vol                           volatile
 
@@ -246,6 +252,8 @@ typedef struct
 #define SPI3_I2S3_PCLK_DI()     (RCC->APB1ENR &=~(1<<15))
 #define SPI4_PCLK_DI()          (RCC->APB2ENR &=~(1<<13))
 
+#define ENABLE                   1
+#define DISABLE                  0
 
 
 #endif /* INC_STM32F401XX_H_ */
