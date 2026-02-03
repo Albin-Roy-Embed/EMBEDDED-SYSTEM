@@ -1,17 +1,153 @@
-22:14:13 **** Incremental Build of configuration Debug for project Driver_Dev ****
+21:37:54 **** Build of configuration Debug for project Driver_Dev ****
 make -j12 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f401retx.d" -MT"Startup/startup_stm32f401retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f401retx.o" "../Startup/startup_stm32f401retx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"C:/Users/user/Desktop/Embedded/STM32/Driver_Dev/Drivers/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"C:/Users/user/Desktop/Embedded/STM32/Driver_Dev/Drivers/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"C:/Users/user/Desktop/Embedded/STM32/Driver_Dev/Drivers/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
 arm-none-eabi-gcc "../Drivers/SRC/STM32F401_GPIO_Driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"C:/Users/user/Desktop/Embedded/STM32/Driver_Dev/Drivers/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/SRC/STM32F401_GPIO_Driver.d" -MT"Drivers/SRC/STM32F401_GPIO_Driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/SRC/STM32F401_GPIO_Driver.o"
-arm-none-eabi-gcc -o "Driver_Dev.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\user\Desktop\Embedded\STM32\Driver_Dev\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Driver_Dev.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Driver_Dev.elf
- 
-arm-none-eabi-size  Driver_Dev.elf 
-arm-none-eabi-objdump -h -S Driver_Dev.elf  > "Driver_Dev.list"
-   text	   data	    bss	    dec	    hex	filename
-    664	      0	   1568	   2232	    8b8	Driver_Dev.elf
-Finished building: default.size.stdout
- 
-Finished building: Driver_Dev.list
- 
+In file included from ../Drivers/SRC/STM32F401_GPIO_Driver.c:12:
+C:/Users/user/Desktop/Embedded/STM32/Driver_Dev/Drivers/INC/STM32F401xx_GPIO_Driver.h:73:48: warning: multi-line comment [-Wcomment]
+   73 | #define GPIO_AF15                      15      // AF15\
+      |                                                ^
+In file included from C:/Users/user/Desktop/Embedded/STM32/Driver_Dev/Drivers/INC/STM32F401xx_GPIO_Driver.h:11:
+../Drivers/SRC/STM32F401_GPIO_Driver.c: In function 'GPIO_PCLOCK_CONTROL':
+C:/Users/user/Desktop/Embedded/STM32/Driver_Dev/Drivers/INC/STM32F401xx.h:206:36: error: invalid type argument of '->' (have 'unsigned int')
+  206 | #define GPIOA_PCLK_EN()        (RCC->AHB1ENR|=(1<<0))
+      |                                    ^~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:38:9: note: in expansion of macro 'GPIOA_PCLK_EN'
+   38 |         GPIOA_PCLK_EN();
+      |         ^~~~~~~~~~~~~
+C:/Users/user/Desktop/Embedded/STM32/Driver_Dev/Drivers/INC/STM32F401xx.h:207:36: error: invalid type argument of '->' (have 'unsigned int')
+  207 | #define GPIOB_PCLK_EN()        (RCC->AHB1ENR|=(1<<1))
+      |                                    ^~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:42:9: note: in expansion of macro 'GPIOB_PCLK_EN'
+   42 |         GPIOB_PCLK_EN();
+      |         ^~~~~~~~~~~~~
+C:/Users/user/Desktop/Embedded/STM32/Driver_Dev/Drivers/INC/STM32F401xx.h:208:36: error: invalid type argument of '->' (have 'unsigned int')
+  208 | #define GPIOC_PCLK_EN()        (RCC->AHB1ENR|=(1<<2))
+      |                                    ^~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:46:9: note: in expansion of macro 'GPIOC_PCLK_EN'
+   46 |         GPIOC_PCLK_EN();
+      |         ^~~~~~~~~~~~~
+C:/Users/user/Desktop/Embedded/STM32/Driver_Dev/Drivers/INC/STM32F401xx.h:209:36: error: invalid type argument of '->' (have 'unsigned int')
+  209 | #define GPIOD_PCLK_EN()        (RCC->AHB1ENR|=(1<<3))
+      |                                    ^~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:50:9: note: in expansion of macro 'GPIOD_PCLK_EN'
+   50 |         GPIOD_PCLK_EN();
+      |         ^~~~~~~~~~~~~
+C:/Users/user/Desktop/Embedded/STM32/Driver_Dev/Drivers/INC/STM32F401xx.h:210:36: error: invalid type argument of '->' (have 'unsigned int')
+  210 | #define GPIOE_PCLK_EN()        (RCC->AHB1ENR|=(1<<4))
+      |                                    ^~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:54:9: note: in expansion of macro 'GPIOE_PCLK_EN'
+   54 |         GPIOE_PCLK_EN();
+      |         ^~~~~~~~~~~~~
+C:/Users/user/Desktop/Embedded/STM32/Driver_Dev/Drivers/INC/STM32F401xx.h:211:36: error: invalid type argument of '->' (have 'unsigned int')
+  211 | #define GPIOH_PCLK_EN()        (RCC->AHB1ENR|=(1<<7))
+      |                                    ^~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:58:9: note: in expansion of macro 'GPIOH_PCLK_EN'
+   58 |         GPIOH_PCLK_EN();
+      |         ^~~~~~~~~~~~~
+C:/Users/user/Desktop/Embedded/STM32/Driver_Dev/Drivers/INC/STM32F401xx.h:214:36: error: invalid type argument of '->' (have 'unsigned int')
+  214 | #define GPIOA_PCLK_DI()        (RCC->AHB1ENR &=~(1<<0))
+      |                                    ^~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:64:13: note: in expansion of macro 'GPIOA_PCLK_DI'
+   64 |             GPIOA_PCLK_DI();
+      |             ^~~~~~~~~~~~~
+C:/Users/user/Desktop/Embedded/STM32/Driver_Dev/Drivers/INC/STM32F401xx.h:215:36: error: invalid type argument of '->' (have 'unsigned int')
+  215 | #define GPIOB_PCLK_DI()        (RCC->AHB1ENR &=~(1<<1))
+      |                                    ^~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:68:13: note: in expansion of macro 'GPIOB_PCLK_DI'
+   68 |             GPIOB_PCLK_DI();
+      |             ^~~~~~~~~~~~~
+C:/Users/user/Desktop/Embedded/STM32/Driver_Dev/Drivers/INC/STM32F401xx.h:216:36: error: invalid type argument of '->' (have 'unsigned int')
+  216 | #define GPIOC_PCLK_DI()        (RCC->AHB1ENR &=~(1<<2))
+      |                                    ^~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:72:13: note: in expansion of macro 'GPIOC_PCLK_DI'
+   72 |             GPIOC_PCLK_DI();
+      |             ^~~~~~~~~~~~~
+C:/Users/user/Desktop/Embedded/STM32/Driver_Dev/Drivers/INC/STM32F401xx.h:217:36: error: invalid type argument of '->' (have 'unsigned int')
+  217 | #define GPIOD_PCLK_DI()        (RCC->AHB1ENR &=~(1<<3))
+      |                                    ^~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:76:13: note: in expansion of macro 'GPIOD_PCLK_DI'
+   76 |             GPIOD_PCLK_DI();
+      |             ^~~~~~~~~~~~~
+C:/Users/user/Desktop/Embedded/STM32/Driver_Dev/Drivers/INC/STM32F401xx.h:218:36: error: invalid type argument of '->' (have 'unsigned int')
+  218 | #define GPIOE_PCLK_DI()        (RCC->AHB1ENR &=~(1<<4))
+      |                                    ^~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:80:13: note: in expansion of macro 'GPIOE_PCLK_DI'
+   80 |             GPIOE_PCLK_DI();
+      |             ^~~~~~~~~~~~~
+C:/Users/user/Desktop/Embedded/STM32/Driver_Dev/Drivers/INC/STM32F401xx.h:219:36: error: invalid type argument of '->' (have 'unsigned int')
+  219 | #define GPIOH_PCLK_DI()        (RCC->AHB1ENR &=~(1<<7))
+      |                                    ^~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:84:13: note: in expansion of macro 'GPIOH_PCLK_DI'
+   84 |             GPIOH_PCLK_DI();
+      |             ^~~~~~~~~~~~~
+../Drivers/SRC/STM32F401_GPIO_Driver.c: In function 'GPIO_INT':
+../Drivers/SRC/STM32F401_GPIO_Driver.c:109:48: error: request for member 'pGPIOx' in something not a structure or union
+  109 |         GPIO_PCLOCK_CONTROL(GPIO_PCLOCK_CONTROL->pGPIOx,ENABLE);
+      |                                                ^~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:111:24: error: 'GPIO_HANDLE_t' has no member named 'GPIO_Pin_CONFIG_t'
+  111 |         if(pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinMODE <=GPIO_MODE_ANALOG)
+      |                        ^~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:113:35: error: 'GPIO_HANDLE_t' has no member named 'GPIO_Pin_CONFIG_t'
+  113 |                 temp (pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinMODE <<(2*pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER));
+      |                                   ^~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:113:85: error: 'GPIO_HANDLE_t' has no member named 'GPIO_Pin_CONFIG_t'
+  113 |                 temp (pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinMODE <<(2*pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER));
+      |                                                                                     ^~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:113:17: error: called object 'temp' is not a function or function pointer
+  113 |                 temp (pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinMODE <<(2*pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER));
+      |                 ^~~~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:106:18: note: declared here
+  106 |         uint32_t temp=0;
+      |                  ^~~~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:114:71: error: 'GPIO_HANDLE_t' has no member named 'GPIO_Pin_CONFIG_t'
+  114 |                 pGPIO_HANDLE->pGPIOx->MODER &=~(0x3 <<(2* pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER));
+      |                                                                       ^~
+../Drivers/SRC/STM32F401_GPIO_Driver.c: In function 'GPIO_READ_INPUTPin':
+../Drivers/SRC/STM32F401_GPIO_Driver.c:150:4: error: unknown type name 'unit8_t'; did you mean 'uint8_t'?
+  150 |    unit8_t value;
+      |    ^~~~~~~
+      |    uint8_t
+../Drivers/SRC/STM32F401_GPIO_Driver.c:151:12: error: expected expression before 'uint8_t'
+  151 |    value  (uint8_t)((pGPIOx->IDR >>PinNUMBER) & 1);
+      |            ^~~~~~~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:151:4: error: called object 'value' is not a function or function pointer
+  151 |    value  (uint8_t)((pGPIOx->IDR >>PinNUMBER) & 1);
+      |    ^~~~~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:150:12: note: declared here
+  150 |    unit8_t value;
+      |            ^~~~~
+../Drivers/SRC/STM32F401_GPIO_Driver.c: In function 'GPIO_PCLOCK_CONTROL':
+../Drivers/SRC/STM32F401_GPIO_Driver.c:236:1: error: expected declaration or statement at end of input
+  236 | }
+      | ^
+../Drivers/SRC/STM32F401_GPIO_Driver.c: At top level:
+../Drivers/SRC/STM32F401_GPIO_Driver.c:232:6: warning: 'TOGGLE_OUTPUTpin' defined but not used [-Wunused-function]
+  232 | void TOGGLE_OUTPUTpin(GPIO_REGDEF_t *pGPIOx,uint8_t PinNUMBER)
+      |      ^~~~~~~~~~~~~~~~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:214:6: warning: 'WIRTE_OUTPUTPORT' defined but not used [-Wunused-function]
+  214 | void WIRTE_OUTPUTPORT(GPIO_REGDEF_t *pGPIOx,uint16_t value)
+      |      ^~~~~~~~~~~~~~~~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:189:6: warning: 'WIRTE_OUTPUTPin' defined but not used [-Wunused-function]
+  189 | void WIRTE_OUTPUTPin(GPIO_REGDEF_t *pGPIOx,uint8_t PinNUMBER,uint8_t value)
+      |      ^~~~~~~~~~~~~~~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:168:10: warning: 'GPIO_READ_INPUTPORT' defined but not used [-Wunused-function]
+  168 | uint16_t GPIO_READ_INPUTPORT(GPIO_REGDEF_t *pGPIOx)
+      |          ^~~~~~~~~~~~~~~~~~~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:148:9: warning: 'GPIO_READ_INPUTPin' defined but not used [-Wunused-function]
+  148 | uint8_t GPIO_READ_INPUTPin(GPIO_REGDEF_t *pGPIOx,uint8_t PinNUMBER)
+      |         ^~~~~~~~~~~~~~~~~~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:131:6: warning: 'GPIO_DEINT' defined but not used [-Wunused-function]
+  131 | void GPIO_DEINT(GPIO_REGDEF_t *pGPIOx)
+      |      ^~~~~~~~~~
+../Drivers/SRC/STM32F401_GPIO_Driver.c:102:6: warning: 'GPIO_INT' defined but not used [-Wunused-function]
+  102 | void GPIO_INT(GPIO_HANDLE_t *pGPIO_HANDLE)
+      |      ^~~~~~~~
+make: *** [Drivers/SRC/subdir.mk:19: Drivers/SRC/STM32F401_GPIO_Driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
 
-22:14:14 Build Finished. 0 errors, 0 warnings. (took 623ms)
+21:37:55 Build Failed. 24 errors, 8 warnings. (took 768ms)
 

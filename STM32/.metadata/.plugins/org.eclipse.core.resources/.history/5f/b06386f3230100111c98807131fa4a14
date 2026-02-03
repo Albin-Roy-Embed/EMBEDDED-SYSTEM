@@ -113,43 +113,8 @@ void GPIO_INT(GPIO_HANDLE_t *pGPIO_HANDLE)
 		temp (pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinMODE <<(2*pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER));
 		pGPIO_HANDLE->pGPIOx->MODER &=~(0x3 <<(2* pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER));
 		pGPIO_HANDLE->pGPIOx->MODER |=temp;
-		temp=0;
 	}
-	else
-	{
 
-	}
-	//SPEED
-	if(pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinMODE <=GPIO_MODE_ANALOG)
-		{
-			temp (pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinSPEED <<(2*pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER));
-			pGPIO_HANDLE->pGPIOx->OTYPER &=~(0x3 <<(2* pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER));
-			pGPIO_HANDLE->pGPIOx->OTYPER |=temp;
-			temp=0;
-		}
-	else
-	{
-
-	}
-	//pull/pull down
-	if(pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinMODE <=GPIO_MODE_ANALOG)
-			{
-				temp (pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinPUPPD_CONTROL <<(2*pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER));
-				pGPIO_HANDLE->pGPIOx->PUPDR&=~(0x3 <<(2* pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER));
-				pGPIO_HANDLE->pGPIOx->PUPDR |=temp;
-				temp=0;
-			}
-	else
-	{
-
-	}
-	//optyper
-	if(pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinMODE <=GPIO_MODE_ANALOG)
-				{
-					temp (pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinOP_TYPE <<pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER);
-					pGPIO_HANDLE->pGPIOx->OTYPER&=~(0x1 << pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER);
-					pGPIO_HANDLE->pGPIOx->OTYPER |=temp;
-					temp=0;
 }
 /*********************************************************************
  * @fn                - GPIO_DEINT

@@ -70,10 +70,7 @@
 #define GPIO_AF12                      12      // AF12
 #define GPIO_AF13                      13      // AF13
 #define GPIO_AF14                      14      // AF14
-#define GPIO_AF15                      15      // AF15\
-
-#define GPIO_PIN_SET                   1
-#define GPIO_PIN_RESET                 0
+#define GPIO_AF15                      15      // AF15
 
 // GPIO INPUT DATA REGISTER (IDR)
 // 1 bit per pin: read pin state (0 = Low, 1 = High)
@@ -108,7 +105,6 @@ typedef struct
 }GPIO_HANDLE_t;
 
 void PCLOCK_CONTROL(GPIO_REGDEF_t*pGPIOx,uint8_t ENorDI);
-
 void GPIO_INT(GPIO_HANDLE_t *pGPIO_HANDLE);
 
 void GPIO_DEINT(GPIO_REGDEF_t *pGPIOx);
