@@ -1,4 +1,5 @@
 "./Drivers/SRC/STM32F401_GPIO_Driver.o"
+"./Src/GPIO_Toggle.o"
 "./Src/main.o"
 "./Src/syscalls.o"
 "./Src/sysmem.o"

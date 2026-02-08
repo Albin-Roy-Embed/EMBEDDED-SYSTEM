@@ -1,0 +1,130 @@
+/*
+ * STM32f401xx_GPIO_Driver.h
+ *
+ *  Created on: Jan 28, 2026
+ *      Author: user
+ */
+
+#ifndef INC_STM32F401XX_GPIO_DRIVER_H_
+#define INC_STM32F401XX_GPIO_DRIVER_H_
+
+#include "STM32F401xx.h"
+
+
+#define GPIO_PIN_NUM_0
+#define GPIO_PIN_NUM_1                  1
+#define GPIO_PIN_NUM_2                  2
+#define GPIO_PIN_NUM_3                  3
+#define GPIO_PIN_NUM_4                  4
+#define GPIO_PIN_NUM_5                  5
+#define GPIO_PIN_NUM_6                  6
+#define GPIO_PIN_NUM_7                  7
+#define GPIO_PIN_NUM_8                  8
+#define GPIO_PIN_NUM_9                  9
+#define GPIO_PIN_NUM_10                 10
+#define GPIO_PIN_NUM_11                 11
+#define GPIO_PIN_NUM_12                 12
+#define GPIO_PIN_NUM_13                 13
+#define GPIO_PIN_NUM_14                 14
+#define GPIO_PIN_NUM_15                 15
+
+/// GPIO MODES (MODER register)
+// 2 bits per pin: 00 = Input, 01 = Output, 10 = Alternate Function, 11 = Analog
+#define GPIO_MODE_IN                   0       // 00 = Input
+#define GPIO_MODE_OUT                  1       // 01 = Output
+#define GPIO_MODE_ALT                  2       // 10 = Alternate Function
+#define GPIO_MODE_ANALOG               3       // 11 = Analog
+
+// GPIO OUTPUT TYPE (OTYPER register)
+// 1 bit per pin: 0 = Push-Pull, 1 = Open-Drain
+#define GPIO_OTYPE_PP                  0       // 0 = Push-Pull
+#define GPIO_OTYPE_OD                  1       // 1 = Open-Drain
+
+// GPIO OUTPUT SPEED (OSPEEDR register)
+// 2 bits per pin: 00 = Low, 01 = Medium, 10 = High, 11 = Very High
+#define GPIO_MODE_LOW_SPEED            0       // 00 = Low speed
+#define GPIO_MODE_MED_SPEED            1       // 01 = Medium speed
+#define GPIO_MODE_HIG_SPEED            2       // 10 = High speed
+#define GPIO_MODE_VHIG_SPEED           3       // 11 = Very High speed
+
+// GPIO PULL-UP / PULL-DOWN (PUPDR register)
+// 2 bits per pin: 00 = No Pull, 01 = Pull-up, 10 = Pull-down
+#define GPIO_MODE_NO_PU_PD             0       // 00 = No pull-up/pull-down
+#define GPIO_MODE_PU                   1       // 01 = Pull-up
+#define GPIO_MODE_PD                   2       // 10 = Pull-down
+
+// GPIO ALTERNATE FUNCTION (AFR[0]/AFR[1] registers)
+// 4 bits per pin: AF0–AF15 depending on peripheral mapping
+#define GPIO_AF0                       0       // AF0
+#define GPIO_AF1                       1       // AF1
+#define GPIO_AF2                       2       // AF2
+#define GPIO_AF3                       3       // AF3
+#define GPIO_AF4                       4       // AF4
+#define GPIO_AF5                       5       // AF5
+#define GPIO_AF6                       6       // AF6
+#define GPIO_AF7                       7       // AF7
+#define GPIO_AF8                       8       // AF8
+#define GPIO_AF9                       9       // AF9
+#define GPIO_AF10                      10      // AF10
+#define GPIO_AF11                      11      // AF11
+#define GPIO_AF12                      12      // AF12
+#define GPIO_AF13                      13      // AF13
+#define GPIO_AF14                      14      // AF14
+#define GPIO_AF15                      15      // AF15\
+
+#define GPIO_PIN_SET                   1
+#define GPIO_PIN_RESET                 0
+
+// GPIO INPUT DATA REGISTER (IDR)
+// 1 bit per pin: read pin state (0 = Low, 1 = High)
+
+// GPIO OUTPUT DATA REGISTER (ODR)
+// 1 bit per pin: write pin state (0 = Low, 1 = High)
+
+// GPIO BIT SET/RESET REGISTER (BSRR)
+// 1 bit per pin: atomic set/reset (lower 16 bits = set, upper 16 bits = reset)
+
+// GPIO CONFIGURATION LOCK REGISTER (LCKR)
+// 1 bit per pin + LCKK bit: lock configuration until reset
+
+
+typedef struct
+{
+
+	uint8_t GPIO_PinNUMBER;
+	uint8_t GPIO_PinMODE;
+	uint8_t GPIO_PinSPEED;
+	uint8_t GPIO_PinPUPPD_CONTROL;
+	uint8_t GPIO_PinOP_TYPE;
+	uint8_t GPIO_PinALT_FUN_MODE;
+
+}GPIO_Pin_CONFIG_t;
+
+typedef struct
+{
+	GPIO_REGDEF_t *pGPIOx;
+	GPIO_Pin_CONFIG_t GPIO_PinConfig;
+
+}GPIO_HANDLE_t;
+
+void PCLOCK_CONTROL(GPIO_REGDEF_t*pGPIOx,uint8_t ENorDI);
+
+void GPIO_INT(GPIO_HANDLE_t *pGPIO_HANDLE);
+
+void GPIO_DEINT(GPIO_REGDEF_t *pGPIOx);
+
+uint8_t GPIO_READ_INPUTPin(GPIO_REGDEF_t *pGPIOx,uint8_t PinNUMBER);
+
+uint16_t GPIO_READ_INPUTPORT(GPIO_REGDEF_t *pGPIOx);
+
+void WIRTE_OUTPUTPin(GPIO_REGDEF_t *pGPIOx,uint8_t PinNUMBER,uint8_t value);
+void WIRTE_OUTPUTPORT(GPIO_REGDEF_t *pGPIOx,uint8_t value);
+void TOGGLE_OUTPUTpin(GPIO_REGDEF_t *pGPIOx,uint8_t PinNUMBER);
+//PENDING INTERUPT
+
+
+
+
+
+
+#endif /* INC_STM32F401XX_GPIO_DRIVER_H_ */

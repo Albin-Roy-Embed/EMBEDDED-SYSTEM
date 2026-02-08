@@ -27,35 +27,34 @@
  */
 
 
-void  GPIO_PCLOCK_CONTROL(GPIO_REGDEF_t *pGPIOx, uint8_t ENorDI)
-
+void GPIO_PCLOCK_CONTROL(GPIO_REGDEF_t *pGPIOx, uint8_t EnorDi)
 {
-if (ENorDI== ENABLE )
-
-{
-    if(pGPIOx == GPIOA)
+    if(EnorDi == ENABLE)
     {
-        GPIOA_PCLK_EN();
-    }
-    else if(pGPIOx == GPIOB)
-    {
-        GPIOB_PCLK_EN();
-    }
-    else if(pGPIOx == GPIOC)
-    {
-        GPIOC_PCLK_EN();
-    }
-    else if(pGPIOx == GPIOD)
-    {
-        GPIOD_PCLK_EN();
-    }
-    else if(pGPIOx == GPIOE)
-    {
-        GPIOE_PCLK_EN();
-    }
-    else if(pGPIOx == GPIOH)
-    {
-        GPIOH_PCLK_EN();
+        if(pGPIOx == GPIOA)
+        {
+            GPIOA_PCLK_EN();
+        }
+        else if(pGPIOx == GPIOB)
+        {
+            GPIOB_PCLK_EN();
+        }
+        else if(pGPIOx == GPIOC)
+        {
+            GPIOC_PCLK_EN();
+        }
+        else if(pGPIOx == GPIOD)
+        {
+            GPIOD_PCLK_EN();
+        }
+        else if(pGPIOx == GPIOE)
+        {
+            GPIOE_PCLK_EN();
+        }
+        else if(pGPIOx == GPIOH)
+        {
+            GPIOH_PCLK_EN();
+        }
     }
     else
     {
@@ -85,6 +84,7 @@ if (ENorDI== ENABLE )
         }
     }
 }
+
 /*********************************************************************
  * @fn                - GPIO_INT
  *
@@ -99,19 +99,17 @@ if (ENorDI== ENABLE )
  *                      speed, pull-up/pull-down, etc.
  */
 
-void GPIO_INT(GPIO_HANDLE_t *pGPIO_HANDLE)
+void GPIO_INIT(GPIO_HANDLE_t *pGPIO_HANDLE)
 {
-
-
 	uint32_t temp=0;
 	//enable the peripheral clock
+	GPIO_PCLOCK_CONTROL(pGPIO_HANDLE->pGPIOx,ENABLE);
 
-	GPIO_PCLOCK_CONTROL(GPIO_PCLOCK_CONTROL->pGPIOx,ENABLE);
 	//GPIO mode
-	if(pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinMODE <=GPIO_MODE_ANALOG)
+	if(pGPIO_HANDLE->GPIO_PinConfig.GPIO_PinMODE <=GPIO_MODE_ANALOG)
 	{
-		temp (pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinMODE <<(2*pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER));
-		pGPIO_HANDLE->pGPIOx->MODER &=~(0x3 <<(2* pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER));
+		temp = (pGPIO_HANDLE->GPIO_PinConfig.GPIO_PinMODE <<(2*pGPIO_HANDLE->GPIO_PinConfig.GPIO_PinNUMBER));
+		pGPIO_HANDLE->pGPIOx->MODER &=~(0x3 <<(2* pGPIO_HANDLE->GPIO_PinConfig.GPIO_PinNUMBER));
 		pGPIO_HANDLE->pGPIOx->MODER |=temp;
 		temp=0;
 	}
@@ -119,38 +117,43 @@ void GPIO_INT(GPIO_HANDLE_t *pGPIO_HANDLE)
 	{
 
 	}
+
 	//SPEED
-	if(pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinMODE <=GPIO_MODE_ANALOG)
-		{
-			temp (pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinSPEED <<(2*pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER));
-			pGPIO_HANDLE->pGPIOx->OTYPER &=~(0x3 <<(2* pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER));
-			pGPIO_HANDLE->pGPIOx->OTYPER |=temp;
-			temp=0;
-		}
+	if(pGPIO_HANDLE->GPIO_PinConfig.GPIO_PinMODE <=GPIO_MODE_ANALOG)
+	{
+		temp = (pGPIO_HANDLE->GPIO_PinConfig.GPIO_PinSPEED <<(2*pGPIO_HANDLE->GPIO_PinConfig.GPIO_PinNUMBER));
+		pGPIO_HANDLE->pGPIOx->OSPEEDR &=~(0x3 <<(2* pGPIO_HANDLE->GPIO_PinConfig.GPIO_PinNUMBER));
+		pGPIO_HANDLE->pGPIOx->OSPEEDR |=temp;
+		temp=0;
+	}
 	else
 	{
 
 	}
+
 	//pull/pull down
-	if(pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinMODE <=GPIO_MODE_ANALOG)
-			{
-				temp (pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinPUPPD_CONTROL <<(2*pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER));
-				pGPIO_HANDLE->pGPIOx->PUPDR&=~(0x3 <<(2* pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER));
-				pGPIO_HANDLE->pGPIOx->PUPDR |=temp;
-				temp=0;
-			}
+	if(pGPIO_HANDLE->GPIO_PinConfig.GPIO_PinMODE <=GPIO_MODE_ANALOG)
+	{
+		temp = (pGPIO_HANDLE->GPIO_PinConfig.GPIO_PinPUPPD_CONTROL <<(2*pGPIO_HANDLE->GPIO_PinConfig.GPIO_PinNUMBER));
+		pGPIO_HANDLE->pGPIOx->PUPDR&=~(0x3 <<(2* pGPIO_HANDLE->GPIO_PinConfig.GPIO_PinNUMBER));
+		pGPIO_HANDLE->pGPIOx->PUPDR |=temp;
+		temp=0;
+	}
 	else
 	{
 
 	}
+
 	//optyper
-	if(pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinMODE <=GPIO_MODE_ANALOG)
-				{
-					temp (pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinOP_TYPE <<pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER);
-					pGPIO_HANDLE->pGPIOx->OTYPER&=~(0x1 << pGPIO_HANDLE->GPIO_Pin_CONFIG_t.GPIO_PinNUMBER);
-					pGPIO_HANDLE->pGPIOx->OTYPER |=temp;
-					temp=0;
+	if(pGPIO_HANDLE->GPIO_PinConfig.GPIO_PinMODE <=GPIO_MODE_ANALOG)
+	{
+		temp = (pGPIO_HANDLE->GPIO_PinConfig.GPIO_PinOP_TYPE <<pGPIO_HANDLE->GPIO_PinConfig.GPIO_PinNUMBER);
+		pGPIO_HANDLE->pGPIOx->OTYPER&=~(0x1 << pGPIO_HANDLE->GPIO_PinConfig.GPIO_PinNUMBER);
+		pGPIO_HANDLE->pGPIOx->OTYPER |=temp;
+		temp=0;
+	}
 }
+
 /*********************************************************************
  * @fn                - GPIO_DEINT
  *
@@ -162,10 +165,15 @@ void GPIO_INT(GPIO_HANDLE_t *pGPIO_HANDLE)
  *
  * @Note              - Resets all configuration registers of the port
  */
-
-void GPIO_DEINT(GPIO_REGDEF_t *pGPIOx)
+void GPIO_DEINIT(GPIO_REGDEF_t *pGPIOx)
 {
+    GPIO_PCLOCK_CONTROL(pGPIOx, DISABLE);
 
+    pGPIOx->MODER   = 0x00000000;
+    pGPIOx->OTYPER  = 0x00000000;
+    pGPIOx->OSPEEDR = 0x00000000;
+    pGPIOx->PUPDR   = 0x00000000;
+    pGPIOx->ODR     = 0x00000000;
 }
 /*********************************************************************
  * @fn                - GPIO_READ_INPUTPin
@@ -179,15 +187,13 @@ void GPIO_DEINT(GPIO_REGDEF_t *pGPIOx)
  *
  * @Note              - Useful for single-bit input reads
  */
-
 uint8_t GPIO_READ_INPUTPin(GPIO_REGDEF_t *pGPIOx,uint8_t PinNUMBER)
 {
-   unit8_t value;
-   value  (uint8_t)((pGPIOx->IDR >>PinNUMBER) & 1);
+   uint8_t value;
+   value = (uint8_t)((pGPIOx->IDR >>PinNUMBER) & 1);
    return value;
-
-
 }
+
 /*********************************************************************
  * @fn                - GPIO_READ_INPUTPORT
  *
@@ -199,16 +205,15 @@ uint8_t GPIO_READ_INPUTPin(GPIO_REGDEF_t *pGPIOx,uint8_t PinNUMBER)
  *
  * @Note              - Useful for reading multiple pins at once
  */
-
 uint16_t GPIO_READ_INPUTPORT(GPIO_REGDEF_t *pGPIOx)
 {
    uint16_t value;
    value=(uint16_t) pGPIOx->IDR;
    return value;
-
 }
+
 /*********************************************************************
- * @fn                - WIRTE_OUTPUTPin
+ * @fn                - WRITE_OUTPUTPin
  *
  * @brief             - Writes a logic value to a specific output pin
  *
@@ -220,8 +225,7 @@ uint16_t GPIO_READ_INPUTPORT(GPIO_REGDEF_t *pGPIOx)
  *
  * @Note              - Sets or clears the bit in ODR register
  */
-
-void WIRTE_OUTPUTPin(GPIO_REGDEF_t *pGPIOx,uint8_t PinNUMBER,uint8_t value)
+void WRITE_OUTPUTPin(GPIO_REGDEF_t *pGPIOx,uint8_t PinNUMBER,uint8_t value)
 {
       if(value==1)
       {
@@ -231,10 +235,10 @@ void WIRTE_OUTPUTPin(GPIO_REGDEF_t *pGPIOx,uint8_t PinNUMBER,uint8_t value)
       {
     	  pGPIOx->ODR &=~(1<<PinNUMBER);
       }
-
 }
+
 /*********************************************************************
- * @fn                - WIRTE_OUTPUTPORT
+ * @fn                - WRITE_OUTPUTPORT
  *
  * @brief             - Writes a 16-bit value to the entire output port
  *
@@ -245,12 +249,11 @@ void WIRTE_OUTPUTPin(GPIO_REGDEF_t *pGPIOx,uint8_t PinNUMBER,uint8_t value)
  *
  * @Note              - Overwrites all pin states in ODR register
  */
-
-void WIRTE_OUTPUTPORT(GPIO_REGDEF_t *pGPIOx,uint16_t value)
+void WRITE_OUTPUTPORT(GPIO_REGDEF_t *pGPIOx,uint16_t value)
 {
     pGPIOx->ODR= value;
-
 }
+
 /*********************************************************************
  * @fn                - TOGGLE_OUTPUTpin
  *
@@ -263,11 +266,9 @@ void WIRTE_OUTPUTPORT(GPIO_REGDEF_t *pGPIOx,uint16_t value)
  *
  * @Note              - Flips the bit in ODR register
  */
-
 void TOGGLE_OUTPUTpin(GPIO_REGDEF_t *pGPIOx,uint8_t PinNUMBER)
 {
 	 pGPIOx->ODR ^=(1<<PinNUMBER);
-
 }
 
 #endif /* SRC_STM32F401_GPIO_DRIVER_C_ */

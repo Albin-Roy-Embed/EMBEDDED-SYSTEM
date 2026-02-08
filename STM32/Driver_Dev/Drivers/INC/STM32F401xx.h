@@ -39,8 +39,8 @@
 #define GPIOH_PBASEADDR                (AHB1_BUSBASEADDR + 0X1C00)
 
 #define CRC_PBASEADDR                  (AHB1_BUSBASEADDR + 0X3000)
-#define RCC_PBASEADDR                  (AHB1_BUSBASEADDR + 0X3800)
-#define FLASH_INTF_REG_PBASEADDR       (AHB1_BUSBASEADDR + 0X3800)
+#define RCC_PBASEADDR                  (AHB1_BUSBASEADDR + 0x3800)
+#define FLASH_INTF_REG_PBASEADDR       (AHB1_BUSBASEADDR + 0X3C00)
 #define DMA1_PBASEADDR                 (AHB1_BUSBASEADDR + 0X6000)
 #define DM2_PBASEADDR                  (AHB1_BUSBASEADDR + 0X6400)
 
@@ -200,7 +200,9 @@ typedef struct
 
 } RCC_REGDEF_t;
 
-#define RCC            (RCC_REGDEF_t *)(RCC_PBASEADDR)
+#define RCC ((RCC_REGDEF_t *)RCC_PBASEADDR)
+
+
 
 //Peripheral Clock enable and Disable macros
 #define GPIOA_PCLK_EN()        (RCC->AHB1ENR|=(1<<0))

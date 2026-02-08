@@ -70,7 +70,7 @@
 #define GPIO_AF12                      12      // AF12
 #define GPIO_AF13                      13      // AF13
 #define GPIO_AF14                      14      // AF14
-#define GPIO_AF15                      15      // AF15\
+#define GPIO_AF15                      15      // AF15
 
 #define GPIO_PIN_SET                   1
 #define GPIO_PIN_RESET                 0
@@ -87,31 +87,27 @@
 // GPIO CONFIGURATION LOCK REGISTER (LCKR)
 // 1 bit per pin + LCKK bit: lock configuration until reset
 
+typedef struct
+{
+    uint8_t GPIO_PinNUMBER;
+    uint8_t GPIO_PinMODE;
+    uint8_t GPIO_PinSPEED;
+    uint8_t GPIO_PinPUPPD_CONTROL;
+    uint8_t GPIO_PinOP_TYPE;
+    uint8_t GPIO_PinALT_FUN_MODE;
+} GPIO_Pin_CONFIG_t;
 
 typedef struct
 {
-
-	uint8_t GPIO_PinNUMBER;
-	uint8_t GPIO_PinMODE;
-	uint8_t GPIO_PinSPEED;
-	uint8_t GPIO_PinPUPPD_CONTROL;
-	uint8_t GPIO_PinOP_TYPE;
-	uint8_t GPIO_PinALT_FUN_MODE;
-
-}GPIO_Pin_CONFIG_t;
-
-typedef struct
-{
-	GPIO_REGDEF_t *pGPIOx;
-	GPIO_Pin_CONFIG_t GPIO_PIN_CONTROL;
-
+    GPIO_REGDEF_t *pGPIOx;
+    GPIO_Pin_CONFIG_t GPIO_PinConfig;
 }GPIO_HANDLE_t;
 
 void PCLOCK_CONTROL(GPIO_REGDEF_t*pGPIOx,uint8_t ENorDI);
 
-void GPIO_INT(GPIO_HANDLE_t *pGPIO_HANDLE);
+void GPIO_INIT(GPIO_HANDLE_t *pGPIO_HANDLE);
 
-void GPIO_DEINT(GPIO_REGDEF_t *pGPIOx);
+void GPIO_DEINIT(GPIO_REGDEF_t *pGPIOx);
 
 uint8_t GPIO_READ_INPUTPin(GPIO_REGDEF_t *pGPIOx,uint8_t PinNUMBER);
 
