@@ -12,3 +12,10 @@ arm-none-eabi-size  Driver_Dev.elf
    1560	      0	   1568	   3128	    c38	Driver_Dev.elf
 Finished building: default.size.stdout
  
+22:15:23 **** Build of configuration Debug for project Driver_Dev ****
+make -j12 all 
+arm-none-eabi-size  Driver_Dev.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1560	      0	   1568	   3128	    c38	Driver_Dev.elf
+Finished building: default.size.stdout
+ 
