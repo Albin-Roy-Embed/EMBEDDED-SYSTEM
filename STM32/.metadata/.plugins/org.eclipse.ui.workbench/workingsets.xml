@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
+<workingSet editPageId="org.eclipse.cdt.ui.CElementWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1772960848555_1" label="STM32F401RE" name="STM32F401RE"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1769613303446_0" label="Window Working Set" name="Aggregate for window 1769613303446"/>
+<mruList name="STM32F401RE"/>
 </workingSetManager>
