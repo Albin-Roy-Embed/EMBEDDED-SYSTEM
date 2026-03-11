@@ -113,9 +113,22 @@ void GPIO_INIT(GPIO_HANDLE_t *pGPIO_HANDLE)
 		pGPIO_HANDLE->pGPIOx->MODER |=temp;
 		temp=0;
 	}
+	//interrupt
 	else
 	{
+		if(pGPIO_HANDLE->GPIO_PinConfig.GPIO_PinMODE ==GPIO_MODE_INTR_FT)
+		{
+	      EXTI
+		}
+		else if(pGPIO_HANDLE->GPIO_PinConfig.GPIO_PinMODE ==GPIO_MODE_INTR_RT)
+		{
 
+		}
+
+		else if(pGPIO_HANDLE->GPIO_PinConfig.GPIO_PinMODE ==GPIO_MODE_INTR_RFT)
+		{
+
+		}
 	}
 
 	//SPEED

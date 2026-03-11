@@ -200,6 +200,29 @@ typedef struct
 
 } RCC_REGDEF_t;
 
+// peripheral register  definitions of EXTI
+
+typedef struct
+{
+	_vol uint32_t IMR;
+	_vol uint32_t EMR;
+	_vol uint32_t RTSR;
+	_vol uint32_t FTSR;
+	_vol uint32_t SWIER;
+	_vol uint32_t PR;
+
+}EXTI_REGDEF_t;
+
+
+typedef struct
+{
+	_vol uint32_t MEMRMP;
+	_vol uint32_t PMC;
+	_vol uint32_t EXTICR[4];
+	_vol uint32_t CMPCR;
+
+}SYSCFG_REGDEF_t;
+
 #define RCC ((RCC_REGDEF_t *)RCC_PBASEADDR)
 
 

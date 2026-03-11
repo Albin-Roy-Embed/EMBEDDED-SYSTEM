@@ -34,8 +34,11 @@
 #define GPIO_MODE_OUT                  1       // 01 = Output
 #define GPIO_MODE_ALT                  2       // 10 = Alternate Function
 #define GPIO_MODE_ANALOG               3       // 11 = Analog
+#define GPIO_MODE_INTR_FT              4       // Interrupt mode falling Edge
+#define GPIO_MODE_INTR_RT              5       // Interrupt mode rising Edge
+#define GPIO_MODE_INTR_RFT             6       // Interrupt mode rising  and falling Edge
 
-// GPIO OUTPUT TYPE (OTYPER register)
+//  GPIO OUTPUT TYPE (OTYPER register)
 // 1 bit per pin: 0 = Push-Pull, 1 = Open-Drain
 #define GPIO_OTYPE_PP                  0       // 0 = Push-Pull
 #define GPIO_OTYPE_OD                  1       // 1 = Open-Drain
@@ -117,7 +120,7 @@ void WIRTE_OUTPUTPin(GPIO_REGDEF_t *pGPIOx,uint8_t PinNUMBER,uint8_t value);
 void WIRTE_OUTPUTPORT(GPIO_REGDEF_t *pGPIOx,uint8_t value);
 void TOGGLE_OUTPUTpin(GPIO_REGDEF_t *pGPIOx,uint8_t PinNUMBER);
 //PENDING INTERUPT
-// is this real
+
 
 
 
