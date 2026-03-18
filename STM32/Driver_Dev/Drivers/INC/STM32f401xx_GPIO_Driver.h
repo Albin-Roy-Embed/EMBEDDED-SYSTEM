@@ -11,7 +11,7 @@
 #include "STM32F401xx.h"
 
 
-#define GPIO_PIN_NUM_0
+#define GPIO_PIN_NUM_0                  0
 #define GPIO_PIN_NUM_1                  1
 #define GPIO_PIN_NUM_2                  2
 #define GPIO_PIN_NUM_3                  3
@@ -106,7 +106,7 @@ typedef struct
     GPIO_Pin_CONFIG_t GPIO_PinConfig;
 }GPIO_HANDLE_t;
 
-void PCLOCK_CONTROL(GPIO_REGDEF_t*pGPIOx,uint8_t ENorDI);
+void GPIO_PCLOCK_CONTROL(GPIO_REGDEF_t *pGPIOx, uint8_t ENorDI);
 
 void GPIO_INIT(GPIO_HANDLE_t *pGPIO_HANDLE);
 
@@ -121,6 +121,9 @@ void WIRTE_OUTPUTPORT(GPIO_REGDEF_t *pGPIOx,uint8_t value);
 void TOGGLE_OUTPUTpin(GPIO_REGDEF_t *pGPIOx,uint8_t PinNUMBER);
 //PENDING INTERUPT
 
+void GPIO_IRQINTERRRUPTCONFIG(uint8_t ORQNUMBER, uint8_t ENorDI);
+void GPIO_IRQPRIORITYCONFIG(uint8_t ORQNUMBER, uint8_t IRQPRIORITY);
+void GPIO_IRQHANDLING(uint8_t PinNUMBER);
 
 
 

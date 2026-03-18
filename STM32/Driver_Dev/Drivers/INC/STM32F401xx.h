@@ -1,5 +1,6 @@
 
 
+
 /*
  * STM32F401xx.h
  *
@@ -225,6 +226,13 @@ typedef struct
 
 #define RCC ((RCC_REGDEF_t *)RCC_PBASEADDR)
 
+#define NVIC_ISER0   ((_vol uint32_t*)0xE000E100)
+#define NVIC_ISER1   ((_vol uint32_t*)0xE000E104)
+#define NVIC_ISER2   ((_vol uint32_t*)0xE000E108)
+
+#define NVIC_ICER0   ((_vol uint32_t*)0xE000E180)
+#define NVIC_ICER1   ((_vol uint32_t*)0xE000E184)
+#define NVIC_ICER2   ((_vol uint32_t*)0xE000E188)
 
 
 //Peripheral Clock enable and Disable macros
@@ -276,6 +284,21 @@ typedef struct
 #define SPI2_I2S2_PCLK_DI()     (RCC->APB1ENR &=~(1<<14))
 #define SPI3_I2S3_PCLK_DI()     (RCC->APB1ENR &=~(1<<15))
 #define SPI4_PCLK_DI()          (RCC->APB2ENR &=~(1<<13))
+
+//clock Enable macros
+#define SYSCFG_PCLK_EN()  (RCC->APB2ENR |= (1<<14))
+
+#define GPIO_BASEADDR_TO_CODE(x)   ((x == GPIOA) ? 0 : \
+                                    (x == GPIOB) ? 1 : \
+                                    (x == GPIOC) ? 2 : \
+                                    (x == GPIOD) ? 3 : \
+                                    (x == GPIOE) ? 4 : \
+                                    (x == GPIOH) ? 7 : 0)
+
+
+#define EXTI   ((EXTI_REGDEF_t*)EXTI_PBASEADDR)
+#define SYSCFG ((SYSCFG_REGDEF_t*)SYSCFG_PBASEADDR)
+
 
 #define ENABLE                   1
 #define DISABLE                  0
