@@ -37,7 +37,7 @@ void green() {
 int main(void)
 {
 	DDRB |= (1<<DDB1)|(1<<DDB2)|(1<<DDB3);
-	DDRC |= (1<<PC4) | (1<<PC5);
+	DDRC |= (1<<DDRC) | (1<<DDRC);
 	DDRD &= ~((1<<PD2));
 	PORTD |= (1<<PD2);
 
@@ -50,15 +50,22 @@ int main(void)
 		red();
 		yellow();
 		green();
+	
 
 		if (interrupt_flag)
 		{
-			PORTC |= (1<<PC4);
-			PORTC &= ~(1<<PC5);
-			_delay_ms(5000);
-			PORTC &= ~(1<<PC4);
-			PORTC |= (1<<PC5);
+			PORTB |= (1<<PB3);    // Set PB3
+			PORTB &= ~(1<<PB2);   // Clear PB2
+			PORTB &= ~(1<<PB1);   // Clear PB1
 
+			PORTC |= (1<<PC4);    // Set PC4
+			PORTC &= ~(1<<PC5);   // Clear PC5
+			_delay_ms(5000);
+			PORTC &= ~(1<<PC4);   // Clear PC4
+			PORTC |= (1<<PC5);    // Set PC5
+
+            _delay_ms(1000);
+			
 			interrupt_flag = 0;
 		}
 	}
