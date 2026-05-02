@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+unsigned char modifyRegister(unsigned char reg) {
+    reg |= (1 << 2);   // Set 3rd bit (index 2)
+    reg &= ~(1 << 5);  // Clear 6th bit (index 5)
+    reg ^= (1 << 0);   // Toggle 1st bit (index 0)
+    return reg;
+}
+
+int main() {
+    unsigned char reg = 0b00101100; // Example value
+    unsigned char result = modifyRegister(reg);
+    printf("Modified register = 0x%X\n", result);
+    return 0;
+}

@@ -1,4 +1,4 @@
-20:58:58 **** Incremental Build of configuration Debug for project RTOS1 ****
+20:15:15 **** Incremental Build of configuration Debug for project RTOS1 ****
 make -j12 all 
 arm-none-eabi-size   RTOS1.elf 
    text	   data	    bss	    dec	    hex	filename

@@ -1,0 +1,95 @@
+1. Write a C program that takes an integer from the user and determines whether
+the number is even or odd.
+
+#include <stdio.h>
+
+int main() {
+   int number;
+   printf("Enter a Number:");
+   scanf("%d",&number);
+   if(number % 2==0)
+   {
+       printf("even",number);
+   }else
+   {
+       printf("odd",number);
+   }
+    return 0;
+}
+
+2. Write a C program that asks the user to enter a number and determines whether that
+number is prime or not.
+
+int main() {
+    int number, i;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (number <= 1) {
+        printf("Not prime\n");
+    } else {
+        for (i = 2; i < number; i++) {
+            if (number % i == 0) {
+                printf("Not prime\n");
+                return 0;  
+            }
+        }
+        printf("Prime\n");
+    }
+
+    return 0;
+}
+
+3. Write a C program that takes a positive integer from the user and calculates its
+factorial.
+
+
+#include <stdio.h>
+
+int main() {
+    int num, i;
+    int fact = 1;   // start with 1
+
+    printf("Enter a positive number: ");
+    scanf("%d", &num);
+
+    if (num < 0) {
+        printf("Factorial not defined for negative numbers\n");
+    } else {
+        for (i = 1; i <= num; i++) {
+            fact = fact * i;   // multiply step by step
+        }
+        printf("Factorial of %d = %d\n", num, fact);
+    }
+
+    return 0;
+}
+
+4. Write a C program to generate the Fibonacci series up to a given number of terms.
+Description: The program should prompt the user to enter the number of terms (n).
+
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    int a = 0, b = 1, next;
+
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Please enter a positive number.\n");
+    } else {
+        printf("Fibonacci Series: ");
+        for (i = 1; i <= n; i++) {
+            printf("%d ", a);
+            next = a + b;   
+            a = b;          
+            b = next;
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
