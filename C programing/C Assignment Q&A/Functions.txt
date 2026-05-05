@@ -25,3 +25,58 @@ int main() {
 
     return 0;
 }
+
+6. Write a C program that uses a recursive function to find the GCD of two 
+numbers using the Euclidean algorithm.
+
+#include <stdio.h>
+
+int gcd(int a, int b) {
+    if (b == 0) {
+        return a;   // Base case
+    }
+    return gcd(b, a % b);  // Recursive step
+}
+
+int main() {
+    int x, y;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &x, &y);
+
+    printf("GCD = %d\n", gcd(x, y));
+    return 0;
+}
+
+7. Write a C program that uses a function to count the frequency of each digit (0–9) 
+in a given integer. 
+
+#include <stdio.h>
+
+// Function to count digit frequencies
+void countDigits(int num, int freq[]) {
+    while (num > 0) {
+        int digit = num % 10;  
+        freq[digit]++;        
+        num = num / 10;         
+    }
+}
+
+int main() {
+    int num;
+    int freq[10] = {0}; 
+
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    countDigits(num, freq);
+
+    for (int i = 0; i < 10; i++) {
+        if (freq[i] > 0) {
+            printf("%d occurs %d times\n", i, freq[i]);
+        }
+    }
+
+    return 0;
+}
+
+
