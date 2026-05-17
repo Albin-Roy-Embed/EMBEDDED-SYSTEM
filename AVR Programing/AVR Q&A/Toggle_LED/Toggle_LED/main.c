@@ -20,8 +20,9 @@ int main(void)
 	while (1)
 	{
 		PORTD|=(1<<PD5);
-		_delay_ms(5000);
+		_delay_ms(1000);
 		PORTD&=~(1<<PD5);
+		_delay_ms(1000);
 	}
 	
 	return 0;
