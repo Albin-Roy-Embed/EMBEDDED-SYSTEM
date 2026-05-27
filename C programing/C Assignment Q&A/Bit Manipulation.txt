@@ -1,0 +1,97 @@
+17.  Write a C program that takes a number and toggles a specific number of bits (n) 
+starting from a given position. 
+
+#include <stdio.h>
+
+int main() {
+    int num, pos, n;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    printf("Enter starting bit position: ");
+    scanf("%d", &pos);
+    printf("Enter number of bits to toggle: ");
+    scanf("%d", &n);
+
+    int mask = ((1 << n) - 1) << pos;
+    num ^= mask;
+
+    printf("Result after toggling = %d\n", num);
+    return 0;
+}
+
+18. Write a C program that takes an integer from the user and extracts (n) bits starting 
+from a specific bit position. 
+
+
+#include <stdio.h>
+
+int main() {
+    int num, pos, n;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    printf("Enter starting bit position: ");
+    scanf("%d", &pos);
+    printf("Enter number of bits to extract: ");
+    scanf("%d", &n);
+
+    int mask = ((1 << n) - 1) << pos;
+    int result = (num & mask) >> pos;
+
+    printf("Extracted bits = %d\n", result);
+    return 0;
+}
+
+19.  Write a C program that takes a number and replaces n of its bits, starting from a 
+given position, with another set of n bits from a second number.
+
+#include <stdio.h>
+
+int main() {
+    int num1, num2, pos, n;
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+    printf("Enter starting bit position: ");
+    scanf("%d", &pos);
+    printf("Enter number of bits to replace: ");
+    scanf("%d", &n);
+
+    int mask = ((1 << n) - 1) << pos;
+    num1 = (num1 & ~mask) | ((num2 & mask));
+
+    printf("Result after replacement = %d\n", num1);
+    return 0;
+}
+
+20. Write a C program that takes two integers and swaps n bits starting from a given 
+position in both numbers. 
+
+
+#include <stdio.h>
+
+int main() {
+    int num1, num2, pos, n;
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+    printf("Enter starting bit position: ");
+    scanf("%d", &pos);
+    printf("Enter number of bits to swap: ");
+    scanf("%d", &n);
+
+    int mask = ((1 << n) - 1) << pos;
+
+    int bits1 = num1 & mask;
+    int bits2 = num2 & mask;
+
+    num1 = (num1 & ~mask) | bits2;
+    num2 = (num2 & ~mask) | bits1;
+
+    printf("After swap:\n");
+    printf("First number = %d\n", num1);
+    printf("Second number = %d\n", num2);
+
+    return 0;
+}

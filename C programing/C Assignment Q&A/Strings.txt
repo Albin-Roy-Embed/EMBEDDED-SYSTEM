@@ -1,0 +1,189 @@
+10. Write a C program that takes a string of digits from the user and converts it into its equivalent 
+integer value.
+
+#include <stdio.h>
+
+int main() {
+    char str[50];
+    int num = 0;
+
+    printf("Enter a number as string: ");
+    scanf("%s", str);
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        num = num * 10 + (str[i] - '0');
+    }
+
+    printf("Integer value: %d\n", num);
+
+    return 0;
+}
+
+
+11. Write a C program that takes an integer from the user and converts it into a 
+string of characters. 
+
+#include <stdio.h>
+
+int main() {
+    int num;
+    char str[50];   // buffer to hold the string
+
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    // Convert integer to string using sprintf
+    sprintf(str, "%d", num);
+
+    printf("String value: %s\n", str);
+
+    return 0;
+}
+
+
+12. Write a C program that takes a string from the user and checks whether it is a 
+palindrome. 
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int i, len, isPalindrome = 1;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    len = strlen(str);
+
+    for (i = 0; i < len / 2; i++) {
+        if (str[i] != str[len - i - 1]) {
+            isPalindrome = 0;
+            break;
+        }
+    }
+
+    if (isPalindrome) {
+        printf("The string is a palindrome.\n");
+    } else {
+        printf("The string is not a palindrome.\n");
+    }
+
+    return 0;
+}
+
+13. Write a C program that takes a string from the user and reverses its characters using 
+an iterative approach. 
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int i, j;
+    char temp;
+
+    printf("Enter a string: ");
+    scanf("%s", str);   // reads input string (no spaces)
+
+    int len = strlen(str);
+
+    // Iterative reversal using two pointers
+    for (i = 0, j = len - 1; i < j; i++, j--) {
+        temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+    }
+
+    printf("Reversed string: %s\n", str);
+
+    return 0;
+}
+
+14.  Write a C program that takes a string input from the user and determines whether it is 
+a pangram or not. 
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main() {
+    char str[200];
+    int letters[26] = {0};  // track presence of each alphabet
+    int i;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);  // read full line including spaces
+
+    // Traverse the string
+    for (i = 0; str[i] != '\0'; i++) {
+        if (isalpha(str[i])) {  // check if character is a letter
+            char ch = tolower(str[i]);  // convert to lowercase
+            letters[ch - 'a'] = 1;      // mark letter as found
+        }
+    }
+
+    // Check if all 26 letters are present
+    int isPangram = 1;
+    for (i = 0; i < 26; i++) {
+        if (letters[i] == 0) {
+            isPangram = 0;
+            break;
+        }
+    }
+
+    if (isPangram) {
+        printf("The string is a pangram.\n");
+    } else {
+        printf("The string is NOT a pangram.\n");
+    }
+
+    return 0;
+}
+
+15.  Write a C program that takes a string from the user and replaces every sequence of 
+multiple consecutive spaces with a single space. 
+
+#include <stdio.h>
+
+int main() {
+    char str[200];
+    int i, j = 0;
+
+    printf("Enter a sentence: ");
+    fgets(str, sizeof(str), stdin);
+
+    for (i = 0; str[i] != '\0'; i++) {
+        if (!(str[i] == ' ' && str[i+1] == ' ')) {
+            str[j++] = str[i];
+        }
+    }
+    str[j] = '\0';
+
+    printf("Cleaned string: %s\n", str);
+    return 0;
+}
+
+16.  Write a C program that takes a string from the user and converts all uppercase letters 
+into their corresponding lowercase letters.
+
+#include <stdio.h>
+
+int main() {
+    char str[200];
+    int i;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);  // read full line including spaces
+
+    for (i = 0; str[i] != '\0'; i++) {
+        if (str[i] >= 'A' && str[i] <= 'Z') {
+            str[i] = str[i] + 32;   // convert uppercase to lowercase
+        }
+    }
+
+    printf("Modified string: %s\n", str);
+    return 0;
+}
+
