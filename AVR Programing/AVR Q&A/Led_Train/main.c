@@ -5,22 +5,20 @@
  * Author : admin
  */ 
 
+#define F_CPU 16000000UL
 #include <avr/io.h>
-
+#include <util/delay.h>
 
 int main(void)
 {
-   DDRB |= (1<<PB0) | (1<<PB1) | (1<<PB2) | (1<<PB3) |
-   (1<<PB4) | (1<<PB5) | (1<<PB6) | (1<<PB7);
-   
-   int led_one
-	   
-   }
-   
-	
-    while (1) 
-    {
-		
-    }
+	DDRB = 0xFF;
+	while (1)
+	{
+		for (uint8_t i = 0; i < 8; i++)
+		{
+			PORTB = (1 << i);
+			_delay_ms(300);
+		}
+	}
+	return 0;
 }
-
