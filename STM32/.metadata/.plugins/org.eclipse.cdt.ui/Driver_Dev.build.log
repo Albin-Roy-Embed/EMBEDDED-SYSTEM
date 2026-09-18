@@ -1,10 +1,11 @@
-22:15:23 **** Build of configuration Debug for project Driver_Dev ****
+20:56:08 **** Build of configuration Debug for project Driver_Dev ****
 make -j12 all 
-arm-none-eabi-size  Driver_Dev.elf 
-   text	   data	    bss	    dec	    hex	filename
-   1560	      0	   1568	   3128	    c38	Driver_Dev.elf
-Finished building: default.size.stdout
- 
+arm-none-eabi-size   Driver_Dev.elf 
+arm-none-eabi-objdump -h -S  Driver_Dev.elf  > "Driver_Dev.list"
+make: *** [makefile:46: default.size.stdout] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [makefile:51: Driver_Dev.list] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
 
-22:15:24 Build Finished. 0 errors, 0 warnings. (took 686ms)
+20:56:09 Build Failed. 3 errors, 0 warnings. (took 1s.571ms)
 
