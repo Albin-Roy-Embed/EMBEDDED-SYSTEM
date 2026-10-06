@@ -1,10 +1,3 @@
-27. Define a structure Complex with real and imaginary parts. Write a C program to add 
-two complex numbers and display the result. 
-
-
-
-
-
 #include <stdio.h>
 
 
