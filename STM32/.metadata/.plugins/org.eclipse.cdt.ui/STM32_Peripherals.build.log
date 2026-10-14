@@ -1,0 +1,58 @@
+20:45:40 **** Incremental Build of configuration Debug for project STM32_Peripherals ****
+make -j12 all 
+arm-none-eabi-gcc "../TIMER_Peripheral/Baremetal/src/TIMERs_Baremetal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"C:/Users/Albin Roy/Desktop/STM32/STM32_Peripherals/GPIO_Peripheral" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"TIMER_Peripheral/Baremetal/src/TIMERs_Baremetal.d" -MT"TIMER_Peripheral/Baremetal/src/TIMERs_Baremetal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "TIMER_Peripheral/Baremetal/src/TIMERs_Baremetal.o"
+arm-none-eabi-gcc "../GPIO_Peripheral/Driver/stm32f401re_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"C:/Users/Albin Roy/Desktop/STM32/STM32_Peripherals/GPIO_Peripheral" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"GPIO_Peripheral/Driver/stm32f401re_gpio_driver.d" -MT"GPIO_Peripheral/Driver/stm32f401re_gpio_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "GPIO_Peripheral/Driver/stm32f401re_gpio_driver.o"
+arm-none-eabi-gcc "../GPIO_Peripheral/Bare metal/src/GPIO_Baremetal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"C:/Users/Albin Roy/Desktop/STM32/STM32_Peripherals/GPIO_Peripheral" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"GPIO_Peripheral/Bare metal/src/GPIO_Baremetal.d" -MT"GPIO_Peripheral/Bare metal/src/GPIO_Baremetal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "GPIO_Peripheral/Bare metal/src/GPIO_Baremetal.o"
+arm-none-eabi-gcc "../GPIO_Peripheral/Application/Blink.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"C:/Users/Albin Roy/Desktop/STM32/STM32_Peripherals/GPIO_Peripheral" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"GPIO_Peripheral/Application/Blink.d" -MT"GPIO_Peripheral/Application/Blink.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "GPIO_Peripheral/Application/Blink.o"
+arm-none-eabi-gcc "../ADC_Peripheral/Driver/src/STM32F401RE_ADC_Driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"C:/Users/Albin Roy/Desktop/STM32/STM32_Peripherals/GPIO_Peripheral" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"ADC_Peripheral/Driver/src/STM32F401RE_ADC_Driver.d" -MT"ADC_Peripheral/Driver/src/STM32F401RE_ADC_Driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "ADC_Peripheral/Driver/src/STM32F401RE_ADC_Driver.o"
+arm-none-eabi-gcc "../ADC_Peripheral/Bare metal/src/ADC_Barematal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"C:/Users/Albin Roy/Desktop/STM32/STM32_Peripherals/GPIO_Peripheral" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"ADC_Peripheral/Bare metal/src/ADC_Barematal.d" -MT"ADC_Peripheral/Bare metal/src/ADC_Barematal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "ADC_Peripheral/Bare metal/src/ADC_Barematal.o"
+arm-none-eabi-gcc "../ADC_Peripheral/Application/ADC_Driver_Application_LDR.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"C:/Users/Albin Roy/Desktop/STM32/STM32_Peripherals/GPIO_Peripheral" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"ADC_Peripheral/Application/ADC_Driver_Application_LDR.d" -MT"ADC_Peripheral/Application/ADC_Driver_Application_LDR.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "ADC_Peripheral/Application/ADC_Driver_Application_LDR.o"
+arm-none-eabi-gcc "../ADC_Peripheral/Application/ADC_Driver_Application_LED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I../Inc -I"C:/Users/Albin Roy/Desktop/STM32/STM32_Peripherals/GPIO_Peripheral" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"ADC_Peripheral/Application/ADC_Driver_Application_LED.d" -MT"ADC_Peripheral/Application/ADC_Driver_Application_LED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "ADC_Peripheral/Application/ADC_Driver_Application_LED.o"
+Error: Cannot find the specified linker script. Check the linker settings in the build configuration.
+../TIMER_Peripheral/Baremetal/src/TIMERs_Baremetal.c:9:10: fatal error: TIMERs_Baremetal.h: No such file or directory
+    9 | #include "TIMERs_Baremetal.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [makefile:91: fail-specified-linker-script-missing] Error 2
+make: *** Waiting for unfinished jobs....
+../GPIO_Peripheral/Bare metal/src/GPIO_Baremetal.c:8:10: fatal error: GPIO_Baremetal.h: No such file or directory
+    8 | #include "GPIO_Baremetal.h"
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [TIMER_Peripheral/Baremetal/src/subdir.mk:19: TIMER_Peripheral/Baremetal/src/TIMERs_Baremetal.o] Error 1
+make: *** [GPIO_Peripheral/Bare metal/src/subdir.mk:19: GPIO_Peripheral/Bare metal/src/GPIO_Baremetal.o] Error 1
+../ADC_Peripheral/Driver/src/STM32F401RE_ADC_Driver.c:7:10: fatal error: STM32F401RE_ADC_Driver.h: No such file or directory
+    7 | #include "STM32F401RE_ADC_Driver.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from ../GPIO_Peripheral/Driver/stm32f401re_gpio_driver.c:8:
+../GPIO_Peripheral/Driver/stm32f401re_gpio_driver.h:12:10: fatal error: STM32F401RE.h: No such file or directory
+   12 | #include "STM32F401RE.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [ADC_Peripheral/Driver/src/subdir.mk:19: ADC_Peripheral/Driver/src/STM32F401RE_ADC_Driver.o] Error 1
+make: *** [GPIO_Peripheral/Driver/subdir.mk:19: GPIO_Peripheral/Driver/stm32f401re_gpio_driver.o] Error 1
+../ADC_Peripheral/Bare metal/src/ADC_Barematal.c:8:10: fatal error: ADC_Baremetal.h: No such file or directory
+    8 | #include "ADC_Baremetal.h"
+      |          ^~~~~~~~~~~~~~~~~
+../GPIO_Peripheral/Application/Blink.c:10:10: fatal error: STM32F401RE.h: No such file or directory
+   10 | #include "STM32F401RE.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+compilation terminated.
+make: *** [ADC_Peripheral/Bare metal/src/subdir.mk:19: ADC_Peripheral/Bare metal/src/ADC_Barematal.o] Error 1
+make: *** [GPIO_Peripheral/Application/subdir.mk:19: GPIO_Peripheral/Application/Blink.o] Error 1
+../ADC_Peripheral/Application/ADC_Driver_Application_LDR.c:4:10: fatal error: STM32F401RE.h: No such file or directory
+    4 | #include "STM32F401RE.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+../ADC_Peripheral/Application/ADC_Driver_Application_LED.c:3:10: fatal error: STM32F401RE.h: No such file or directory
+    3 | #include "STM32F401RE.h"
+      |          ^~~~~~~~~~~~~~~
+make: *** [ADC_Peripheral/Application/subdir.mk:22: ADC_Peripheral/Application/ADC_Driver_Application_LDR.o] Error 1
+compilation terminated.
+make: *** [ADC_Peripheral/Application/subdir.mk:22: ADC_Peripheral/Application/ADC_Driver_Application_LED.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+20:45:40 Build Failed. 19 errors, 0 warnings. (took 411ms)
+

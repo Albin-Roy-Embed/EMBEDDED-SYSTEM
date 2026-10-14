@@ -1,0 +1,8 @@
+../External_drivers/RTC_DS1307/src/DS1307.c:24:16:RTC_BCD_To_Decimal	1
+../External_drivers/RTC_DS1307/src/DS1307.c:31:16:RTC_Decimal_To_BCD	1
+../External_drivers/RTC_DS1307/src/DS1307.c:42:14:DS1307_SetTime	17
+../External_drivers/RTC_DS1307/src/DS1307.c:103:14:DS1307_GetTime	4
+../External_drivers/RTC_DS1307/src/DS1307.c:152:14:DS1307_SetDate	9
+../External_drivers/RTC_DS1307/src/DS1307.c:185:14:DS1307_GetDate	2
+../External_drivers/RTC_DS1307/src/DS1307.c:216:6:DS1307_StartClock	1
+../External_drivers/RTC_DS1307/src/DS1307.c:225:6:DS1307_StopClock	1

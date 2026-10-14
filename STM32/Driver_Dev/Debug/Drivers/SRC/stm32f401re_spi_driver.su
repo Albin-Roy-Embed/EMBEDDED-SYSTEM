@@ -1,0 +1,9 @@
+../drivers/src/stm32f401re_spi_driver.c:21:6:SPI_PeriClockControl	16	static
+../drivers/src/stm32f401re_spi_driver.c:78:6:SPI_PeripheralControl	16	static
+../drivers/src/stm32f401re_spi_driver.c:100:6:SPI_Init	16	static
+../drivers/src/stm32f401re_spi_driver.c:191:9:SPI_Get_FlagStatus	24	static
+../drivers/src/stm32f401re_spi_driver.c:214:6:SPI_Transmit_Buffer	24	static
+../drivers/src/stm32f401re_spi_driver.c:242:6:SPI_Transmit_Byte	16	static
+../drivers/src/stm32f401re_spi_driver.c:264:6:SPI_Receive_Buffer	24	static
+../drivers/src/stm32f401re_spi_driver.c:295:9:SPI_Receive_Byte	16	static
+../drivers/src/stm32f401re_spi_driver.c:315:6:SPI_ClearOVRFlag	24	static

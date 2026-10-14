@@ -1,0 +1,10 @@
+../drivers/src/stm32f401re_usart_driver.c:20:6:USART_PeriClockControl	16	static
+../drivers/src/stm32f401re_usart_driver.c:69:6:USART_PeripheralControl	16	static
+../drivers/src/stm32f401re_usart_driver.c:93:6:USART_Set_BaudRate	32	static
+../drivers/src/stm32f401re_usart_driver.c:137:6:USART_Init	16	static
+../drivers/src/stm32f401re_usart_driver.c:222:6:USART_Transmit	16	static
+../drivers/src/stm32f401re_usart_driver.c:246:10:USART_Recieve	16	static
+../drivers/src/stm32f401re_usart_driver.c:274:6:USART_Transmit_Buffer	24	static
+../drivers/src/stm32f401re_usart_driver.c:330:6:USART_Receive_Buffer	24	static
+../drivers/src/stm32f401re_usart_driver.c:383:6:USART_Transmit_String	16	static
+../drivers/src/stm32f401re_usart_driver.c:408:6:USART_Receive_String	32	static

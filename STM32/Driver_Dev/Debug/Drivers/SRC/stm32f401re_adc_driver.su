@@ -1,0 +1,11 @@
+../drivers/src/stm32f401re_adc_driver.c:30:6:ADC_Init	32	static
+../drivers/src/stm32f401re_adc_driver.c:150:6:ADC_Peripheral_Control	16	static
+../drivers/src/stm32f401re_adc_driver.c:168:6:ADC_Register_GlobalPointer	16	static
+../drivers/src/stm32f401re_adc_driver.c:184:6:ADC_Peripheral_Reset	4	static
+../drivers/src/stm32f401re_adc_driver.c:189:9:ADC_Get_status	24	static
+../drivers/src/stm32f401re_adc_driver.c:197:6:ADC_StartConversion	16	static
+../drivers/src/stm32f401re_adc_driver.c:219:6:ADC_IRQHandler	8	static
+../drivers/src/stm32f401re_adc_driver.c:266:6:ADC_Register_CallBack	16	static
+../drivers/src/stm32f401re_adc_driver.c:288:10:ADC_Read_Data	24	static
+../drivers/src/stm32f401re_adc_driver.c:316:6:ADC_Fill_Buffer	16	static
+../drivers/src/stm32f401re_adc_driver.c:333:9:driver_testing	16	static

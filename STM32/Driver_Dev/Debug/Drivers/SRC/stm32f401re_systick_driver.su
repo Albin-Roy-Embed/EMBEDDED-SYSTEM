@@ -1,0 +1,6 @@
+../drivers/src/stm32f401re_systick_driver.c:54:18:SysTick_Init	32	static
+../drivers/src/stm32f401re_systick_driver.c:129:6:SysTick_Handler	8	static
+../drivers/src/stm32f401re_systick_driver.c:153:10:SysTick_GetTick	4	static
+../drivers/src/stm32f401re_systick_driver.c:174:6:SysTick_Delay_ms	40	static
+../drivers/src/stm32f401re_systick_driver.c:202:6:SysTick_HasElapsedTicks	16	static
+../drivers/src/stm32f401re_systick_driver.c:229:6:SysTick_RegisterCallback	16	static

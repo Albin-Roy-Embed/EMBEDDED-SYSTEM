@@ -1,0 +1,9 @@
+../External_drivers/BMP280_Sensor/src/BMP280.c:12:13:BMP_Select	16	static
+../External_drivers/BMP280_Sensor/src/BMP280.c:18:13:BMP_Deselect	16	static
+../External_drivers/BMP280_Sensor/src/BMP280.c:25:16:BMP280_ReadRegister	24	static
+../External_drivers/BMP280_Sensor/src/BMP280.c:35:13:BMP280_WriteRegister	16	static
+../External_drivers/BMP280_Sensor/src/BMP280.c:42:13:BMP280_ReadRegisters	24	static
+../External_drivers/BMP280_Sensor/src/BMP280.c:63:6:BMP280_Init	48	static
+../External_drivers/BMP280_Sensor/src/BMP280.c:124:6:BMP280_Configure	24	static
+../External_drivers/BMP280_Sensor/src/BMP280.c:153:6:BMP280_ReadTemperature	40	static
+../External_drivers/BMP280_Sensor/src/BMP280.c:191:6:BMP280_ReadPressure	344	static

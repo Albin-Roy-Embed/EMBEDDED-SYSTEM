@@ -1,0 +1,10 @@
+20:45:39 **** Incremental Build of configuration Debug for project GPIOdriverTest ****
+make -j12 all 
+arm-none-eabi-size  GPIOdriverTest.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1788	      0	   1568	   3356	    d1c	GPIOdriverTest.elf
+Finished building: default.size.stdout
+ 
+
+20:45:39 Build Finished. 0 errors, 0 warnings. (took 318ms)
+

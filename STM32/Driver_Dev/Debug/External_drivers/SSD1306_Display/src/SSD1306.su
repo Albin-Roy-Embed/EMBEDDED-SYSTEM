@@ -1,0 +1,11 @@
+../External_drivers/SSD1306_Display/src/SSD1306.c:12:13:SSD1306_SendCommand	16	static
+../External_drivers/SSD1306_Display/src/SSD1306.c:16:13:SSD1306_SendCommandBuffer	32	static
+../External_drivers/SSD1306_Display/src/SSD1306.c:21:13:SSD1306_SendDataBuffer	32	static
+../External_drivers/SSD1306_Display/src/SSD1306.c:25:22:SSD1306_SetOrientation	16	static
+../External_drivers/SSD1306_Display/src/SSD1306.c:62:15:SSD1306_Init	32	static
+../External_drivers/SSD1306_Display/src/SSD1306.c:113:6:SSD1306_Update	24	static
+../External_drivers/SSD1306_Display/src/SSD1306.c:135:6:SSD1306_ClearDisplay	24	static
+../External_drivers/SSD1306_Display/src/SSD1306.c:156:6:SSD1306_SetContrast	16	static
+../External_drivers/SSD1306_Display/src/SSD1306.c:173:6:SSD1306_DisplayInvert	16	static
+../External_drivers/SSD1306_Display/src/SSD1306.c:191:6:SSD1306_DisplayOff	16	static
+../External_drivers/SSD1306_Display/src/SSD1306.c:202:6:SSD1306_DisplayOn	16	static

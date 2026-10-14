@@ -1,11 +1,18 @@
-20:56:08 **** Build of configuration Debug for project Driver_Dev ****
+20:45:40 **** Incremental Build of configuration Debug for project driver_dev ****
 make -j12 all 
-arm-none-eabi-size   Driver_Dev.elf 
-arm-none-eabi-objdump -h -S  Driver_Dev.elf  > "Driver_Dev.list"
-make: *** [makefile:46: default.size.stdout] Error 1
-make: *** Waiting for unfinished jobs....
-make: *** [makefile:51: Driver_Dev.list] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
+arm-none-eabi-gcc "../drivers/src/stm32f401re_timer_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I"C:/Users/Albin Roy/Desktop/STM32/driver_dev/External_drivers/SSD1306_Display/inc" -I"C:/Users/Albin Roy/Desktop/STM32/driver_dev/External_drivers/SSD1306_Display/bitmaps" -I../Inc -I"C:/Users/Albin Roy/Desktop/STM32/driver_dev/External_drivers/RTC_DS1307/inc" -I"C:/Users/Albin Roy/Desktop/STM32/driver_dev/External_drivers/BMP280_Sensor/inc" -I"C:/Users/Albin Roy/Desktop/STM32/driver_dev/Core/Inc" -I"C:/Users/Albin Roy/Desktop/STM32/driver_dev/Examples/inc" -I"C:/Users/Albin Roy/Desktop/STM32/driver_dev/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/src/stm32f401re_timer_driver.d" -MT"drivers/src/stm32f401re_timer_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "drivers/src/stm32f401re_timer_driver.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F401RE -DSTM32 -DSTM32F401RETx -DSTM32F4 -c -I"C:/Users/Albin Roy/Desktop/STM32/driver_dev/External_drivers/SSD1306_Display/inc" -I"C:/Users/Albin Roy/Desktop/STM32/driver_dev/External_drivers/SSD1306_Display/bitmaps" -I../Inc -I"C:/Users/Albin Roy/Desktop/STM32/driver_dev/External_drivers/RTC_DS1307/inc" -I"C:/Users/Albin Roy/Desktop/STM32/driver_dev/External_drivers/BMP280_Sensor/inc" -I"C:/Users/Albin Roy/Desktop/STM32/driver_dev/Core/Inc" -I"C:/Users/Albin Roy/Desktop/STM32/driver_dev/Examples/inc" -I"C:/Users/Albin Roy/Desktop/STM32/driver_dev/drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "driver_dev.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Albin Roy\Desktop\STM32\driver_dev\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="driver_dev.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: driver_dev.elf
+ 
+arm-none-eabi-size  driver_dev.elf 
+arm-none-eabi-objdump -h -S driver_dev.elf  > "driver_dev.list"
+   text	   data	    bss	    dec	    hex	filename
+  20048	    456	   1928	  22432	   57a0	driver_dev.elf
+Finished building: default.size.stdout
+ 
+Finished building: driver_dev.list
+ 
 
-20:56:09 Build Failed. 3 errors, 0 warnings. (took 1s.571ms)
+20:45:41 Build Finished. 0 errors, 0 warnings. (took 968ms)
 

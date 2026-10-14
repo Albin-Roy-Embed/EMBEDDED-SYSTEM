@@ -1,0 +1,8 @@
+"./ADC_Peripheral/Application/ADC_Driver_Application_LDR.o"
+"./ADC_Peripheral/Application/ADC_Driver_Application_LED.o"
+"./ADC_Peripheral/Bare metal/src/ADC_Barematal.o"
+"./ADC_Peripheral/Driver/src/STM32F401RE_ADC_Driver.o"
+"./GPIO_Peripheral/Application/Blink.o"
+"./GPIO_Peripheral/Bare metal/src/GPIO_Baremetal.o"
+"./GPIO_Peripheral/Driver/stm32f401re_gpio_driver.o"
+"./TIMER_Peripheral/Baremetal/src/TIMERs_Baremetal.o"
